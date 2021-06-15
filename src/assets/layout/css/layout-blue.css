@@ -2387,6 +2387,7 @@ a {
   vertical-align: middle;
   display: inline-block;
 }
+
 .layout-dashboard .team ul .team-box {
   margin-left: 1em;
   display: inline-block;
@@ -2834,7 +2835,7 @@ a {
 }
 .team ul img {
   width: 36px;
-  height: 36x;
+  height: 36px;
   vertical-align: middle;
   display: inline-block;
 }
