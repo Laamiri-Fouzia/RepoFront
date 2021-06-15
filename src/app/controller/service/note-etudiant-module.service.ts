@@ -23,7 +23,7 @@ export class NoteEtudiantModuleService {
   private _editDialog: boolean;
   private _noteEtudiantModule:NoteEtudiantModule;
   private _notesEtudiantModule:Array<NoteEtudiantModule>;
-  private _etudiantAbsente:Array<Etudiant>;
+  private _etudiantAbsente:Array<NoteEtudiantModule>;
   private _notesEtudiantRat:Array<NoteEtudiantModule>;
 
     private moduleselsected: string;
@@ -38,41 +38,47 @@ export class NoteEtudiantModuleService {
         return this.moduleSemestreOptionService.moduleSemestreOption;
     }
 
-    get etudiantAbsente(): Array<Etudiant> {
+    get etudiantAbsente(): Array<NoteEtudiantModule> {
       if(this._etudiantAbsente==null)
-          this._etudiantAbsente=new Array<Etudiant>();
+          this._etudiantAbsente=new Array<NoteEtudiantModule>();
         return this._etudiantAbsente;
     }
 
-    set etudiantAbsente(value: Array<Etudiant>) {
+    set etudiantAbsente(value: Array<NoteEtudiantModule>) {
         this._etudiantAbsente = value;
     }
 
 
-    private filterEtudiant(data: Array<NoteEtudiantModule>) {
-
+    private filterEtudiant(data: Array<NoteEtudiantModule>,mod:string) {
            for(let noteEtudiantModule of data){
-
-               this.http.get<Array<Absence>>(this._urlAbsence+'etudiant/cne/'+noteEtudiantModule.etudiant.cne+'/seance/moduleSemestreOption/code/'+this.moduleselsected).subscribe(
+           alert(this._urlAbsence+'etudiant/cne/'+noteEtudiantModule.etudiant.cne+'/seance/moduleSemestreOption/code/'+mod)
+               this.http.get<Array<Absence>>(this._urlAbsence+'etudiant/cne/'+noteEtudiantModule.etudiant.cne+'/seance/moduleSemestreOption/code/'+mod).subscribe(
                    data => {
+                       alert(data.length)
                        if(data.length<3)
                            this.notesEtudiantModule.push(noteEtudiantModule);
                        else
-                           this.etudiantAbsente.push(noteEtudiantModule.etudiant);
+                           this.etudiantAbsente.push(noteEtudiantModule);
+
+                       console.log('hada notes')
+                       console.log(this.notesEtudiantModule)
+                       console.log('absences')
+                       console.log(this.etudiantAbsente)
                    }, error => {
                        console.log(error);
                    }
                );
 
            }
-    }
+  }
 
-  serachEtudiant(module:string) {
+  serachEtudiant(mod:string) {
         this.notesEtudiantModule=new Array<NoteEtudiantModule>();
-      this._moduleselected=module;
-      this.http.get<Array<NoteEtudiantModule>>(this.urlBase + this.URLNoteEtudModule+'/module-semestre-option/codeModule/'+module).subscribe(
+      this._moduleselected=mod;
+      alert(mod)
+      this.http.get<Array<NoteEtudiantModule>>(this.urlBase + this.URLNoteEtudModule+'/module-semestre-option/codeModule/'+mod).subscribe(
       data => {
-           this.filterEtudiant(data);
+           this.filterEtudiant(data,mod);
       }, error => {
         console.log(error);
       }
@@ -119,7 +125,6 @@ export class NoteEtudiantModuleService {
 
 
   EditNote() {
-        alert(this.moduleSemestreOption.myOption.coefFinale)
      let pc = this.moduleSemestreOption.myOption.coefContinue;
      let pf = this.moduleSemestreOption.myOption.coefFinale;
      let nc=this.noteEtudiantModule.noteContinue;

@@ -1,0 +1,106 @@
+.button {
+  border-radius: 4px;
+  background-color: #8EAA54 ;//hsla(0, 100%, 30%, 0.3); rgb(204, 153, 0) rgb(102, 153, 0)->khder
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 26px;
+  padding: 10px;//20px
+  width: 150px;//200px
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.7s;//0.5s
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.7s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+// hna dok les cardd
+
+/*.page{
+  background-color: darkseagreen  !important;
+  height: 600px;
+}*/
+/*.container-fluid{
+  background: url("../../images/overlay.png"),url("../../images/infer.jpg");
+  height: 600px;
+}*/
+.main-row{
+  margin-top:13%;
+}
+.card{
+  cursor: pointer;
+  border-color: #004D63;
+  border-width: 2px;
+  background-color:#9CD6CC;/* #008080 #008B8B #00FA9A #48D1CC #87CEEB  #00FFFF  #7FFFD4 #5F9EA0  #00CED1 #ADD8E6  #20B2AA*/
+
+}
+.card img{
+  transform: translateY(-50px);
+  border-radius: 40px;
+  z-index :1;
+  background-image: url("../../../assets/OurImages/logoIspits.png");
+}
+
+.img1 img{
+  transform: translateY(-50px);
+  border-radius: 40px;
+  z-index :1;
+  background-image: url("../../../assets/OurImages/logoIspits.png");
+}
+
+.img2 img{
+  transform: translateY(-50px);
+  border-radius: 40px;
+  z-index :1;
+  background-image: url("../../../assets/OurImages/logoIspits.png");
+}
+
+.img3 img{
+  transform: translateY(-50px);
+  border-radius: 40px;
+  z-index :1;
+  background-image: url("../../../assets/OurImages/logoIspits.png");
+}
+
+
+
+.card .card-body{
+  visibility: hidden;
+  transform: translateY(-150px);
+  height:0px;
+}
+.card:hover .card-body{
+  visibility: visible;
+  transform: translateY(-50px);
+  transition: 1s;
+  height: auto;
+}
+.card-title{
+  color: #013E64;
+}
+.btn-outline-dark{
+  color:papayawhip;
+}

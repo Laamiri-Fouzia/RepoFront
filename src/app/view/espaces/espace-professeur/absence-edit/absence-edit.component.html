@@ -1,0 +1,115 @@
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card p-grid">
+            <h2 class="p-col-12 p-text-center bold">Liste des Absences</h2>
+
+            <div class="p-col-12">
+                <button (click)="choisirParametre()" class="myButton" label="cliquer pour choisir les paramétres" pButton
+                        pRipple></button>
+            </div>
+            <div class="p-grid ">
+                <div [ngClass]="{'vis':displayTable==false}" class="p-col-6">
+                    <p-table #dt [(selection)]="selects" [columns]="cols" [globalFilterFields]="['cne','nom']"
+                             [rowHover]="true" [showCurrentPageReport]="true" [value]="inscriptionEtudiants"
+                             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                             dataKey="id"
+                             styleClass="p-datatable-customers">
+                        <ng-template pTemplate="caption">
+                            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                                <h5 class="p-m-0">Liste des etudiants: </h5>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="cne">CNE
+                                    <p-sortIcon field="cne"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="nom">Nom
+                                    <p-sortIcon field="nom"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="nom">PRENOM
+                                    <p-sortIcon field="nom"></p-sortIcon>
+                                </th>
+
+                                <th style="width: 3rem">
+                                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                                </th>
+                                <th>Absent</th>
+                                <!--<th pSortableColumn="nom">present <p-sortIcon field="nom"></p-sortIcon></th>-->
+
+                                <!--<th pSortableColumn="totalPaye">Total Paye <p-sortIcon field="totalPaye"></p-sortIcon></th>-->
+                            </tr>
+                        </ng-template>
+                        <ng-template let-inscription pTemplate="body">
+                            <tr>
+                                <td>{{inscription.etudiant.cne}}</td>
+                                <td>{{inscription.etudiant.nom}}</td>
+                                <td>{{inscription.etudiant.prenom}}</td>
+
+                                <td>
+                                    <p-tableCheckbox [value]="inscription"></p-tableCheckbox>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="summary">
+                            <div class="p-d-flex p-ai-center p-jc-between">
+                                <button (click)="validerAbsence()" class="buttonClass">valider</button>
+
+                            </div>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <div [ngClass]="{'vis':displayTable==false}" class="p-col-6">
+                    <p-table #dt [columns]="cols" [globalFilterFields]="['cne','nom']" [rowHover]="true"
+                             [showCurrentPageReport]="true" [value]="listAbsences"
+                             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                             dataKey="id"
+                             styleClass="p-datatable-customers">
+                        <ng-template pTemplate="caption">
+                            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                                <h5 class="p-m-0">Liste des Absence pour cette seance </h5>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="cne">CNE
+                                    <p-sortIcon field="cne"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="nom">Nom
+                                    <p-sortIcon field="nom"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="nom">PRENOM
+                                    <p-sortIcon field="nom"></p-sortIcon>
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template let-absence pTemplate="body">
+                            <tr>
+                                <td>{{absence.etudiant.cne}}</td>
+                                <td>{{absence.etudiant.nom}}</td>
+                                <td>{{absence.etudiant.prenom}}</td>
+                                <td>
+                                    <button (click)="delete(absence)" class="p-button-rounded p-button-warning" icon="pi pi-trash" pButton
+                                            pRipple></button>
+                                </td>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="summary">
+                            <div class="p-d-flex p-ai-center p-jc-between">
+
+                            </div>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+
+
+        </div>
+        <app-choisir-param></app-choisir-param>
+    </div>
+</div>
+

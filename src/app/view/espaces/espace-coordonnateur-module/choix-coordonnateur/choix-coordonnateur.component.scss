@@ -1,0 +1,54 @@
+.button {
+  padding: 100px 100px;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 90px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #cbcbd6;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #cbcbd6;
+
+}
+
+.button:hover {
+  background-color: #9d9da5;color: white
+}
+
+.gg:hover{
+  background-color: #9d9da5
+}
+
+.button:active {
+  background-color: #7c7ca3;
+  box-shadow: 0 5px #cbcbd6;
+  transform: translateY(4px);
+}
+
+.gg{
+  color:#cbcbd6;
+}
+
+.page{
+  margin: 0px;
+  /*background-image: url("green6.jpg");*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family:new time roman;
+  height: 700px;//100%
+  // background-image: url("../../../../assets/OurImages/overlay.png"),url("../../../assets/OurImages/infer.jpg");
+  background-image: url("../../../../../assets/OurImages/overlay.png"),url("../../../../../assets/OurImages/ftgh.jpg");
+}
+
+
+h1{
+  margin-left: 450px;
+  padding-top: 60px;
+  color: white;
+  border-radius: 15px;
+
+}

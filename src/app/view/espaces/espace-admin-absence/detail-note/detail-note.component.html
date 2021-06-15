@@ -1,0 +1,59 @@
+<button pButton pRipple type="button" icon="pi pi-arrow-left" class="p-button-rounded p-button-secondary" (click)="gotTo('view/AdminAbsence')"></button>
+
+<div class="p-grid">
+    <div class="p-col-12" style="padding-top:5px">
+        <p-toast></p-toast>
+        <div class="card p-grid">
+            <h2 class="p-col-12 p-text-center bold">La liste des etudiants </h2>
+            <p-toolbar styleClass="p-mb-4 " class="p-col-12">
+
+                <div class="p-col-2">
+                    <p-dropdown [style]="{'width':'180px'}" [options]="years" [(ngModel)]="input1" optionLabel="libelle" optionValue="anneeOne" (onChange)="change1()" styleClass = "customClass" placeholder="Année universitaire"></p-dropdown>
+                </div>
+
+                <div class="p-col-2">
+                    <p-dropdown [style]="{'width':'180px'}"  [options]="options" [(ngModel)]="input2" optionLabel="label" optionValue="value" [filter]="true" (onChange)="change2()"></p-dropdown>
+                </div>
+
+                <div class="p-col-2">
+                    <p-dropdown [style]="{'width':'180px'}"  [options]="semestres" [(ngModel)]="input3" optionLabel="label" optionValue="value"  (onChange)="change3()"></p-dropdown>
+                </div>
+
+                <div class="p-col-4">
+                    <p-dropdown [style]="{'width':'180px'}"  [options]="modules" [(ngModel)]="input4" optionLabel="label" optionValue="value" [filter]="true" (onClick)="change4()"></p-dropdown>
+                </div>
+
+                <p-button class="p-col-2" (click)="serachEtudiant(input4)">chercher</p-button>
+            </p-toolbar>
+
+            <p-table  [value]="notesEtudiantModule" [columns]="cols"  [globalFilterFields]="['etudiant','etudiant1','noteContinue','noteFinaleAvantRat','noteModuleNormale','resultat']"
+                     [rowHover]="true" dataKey="id"
+                     styleClass="p-datatable-customers"
+                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="cne">CNE </th>
+                        <th pSortableColumn="etudiant">Nom </th>
+                        <th pSortableColumn="etudiant1">Prenom </th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-note>
+                    <tr>
+                        <td>{{note.etudiant.cne}}</td>
+                        <td>{{note.etudiant.nom}}</td>
+                        <td>{{note.etudiant.prenom}}</td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+
+        </div>
+    </div>
+    <div>
+        <button (click)="gotTo('view/etudiantExcluts')">-->générer la liste des étudiants qui n'ont pas le droit de passer l'examen normale de ce module</button>
+
+    </div>
+</div>
+

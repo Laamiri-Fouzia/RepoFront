@@ -1,0 +1,60 @@
+<div class="page">
+    <div class="container-fluid">
+        <div class="row main-row">
+            <div class="col-md-3 mb-5">
+                <div class="card p-3" style="width: 17rem;" >
+                    <img  class="card-img-top shadow bg-white rounded " height="160" >
+                    <div class="card-body">
+                        <h5 class="card-title">Administrateur</h5>
+                        <p class="card-text"> </p>
+                        <button type="button" class="btn btn-outline-dark" (click)="gotToAdmin('view/AdminNoteNote')">Admin Note</button><!--(click)="gotToAdmin('view/login')-->
+                        <button type="button" class="btn btn-outline-dark" (click)="gotToAdmin('view/AdminAbsence')">Admin Absence</button><!--(click)="gotToAdmin('view/login')-->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 mb-5">
+                <div class="card p-3" style="width: 17rem;" >
+                    <div class="img1">
+                        <img  class="card-img-top shadow bg-white rounded " height="160" width="200" >
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Coordonnateur du module</h5>
+                        <p class="card-text"> </p>
+                        <button type="button" class="btn btn-outline-dark"  (click)="gotToCoor('view/coordonatteurModule')">Se connecter</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 mb-5">
+                <div class="card p-3" style="width: 17rem;" >
+                    <div class="img2">
+                        <img  class="card-img-top shadow bg-white rounded " height="160" >
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Professeur</h4>
+                        <p class="card-text"></p>
+                        <button type="button" class="btn btn-outline-dark"  (click)="gotToProf('view/professeur')">Se connecter</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 mb-5">
+                <div class="card p-3" style="width: 17rem;" >
+                    <div class="img3">
+                        <img  class="card-img-top shadow bg-white rounded " height="160" >
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Etudiant</h4>
+                        <p class="card-text"> </p>
+                        <button type="button" class="btn btn-outline-dark"  (click)="gotToEtudiant('espaces/etudiant')">Se connecter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="button" (click)="gotToAccueil('')"><span>Accueil </span></button>

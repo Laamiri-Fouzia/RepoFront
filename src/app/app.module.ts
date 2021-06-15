@@ -111,55 +111,69 @@ import {CustomerService} from './demo/service/customerservice';
 import {PhotoService} from './demo/service/photoservice';
 import {ProductService} from './demo/service/productservice';
 import {IconService} from './demo/service/iconservice';
-import {MyModulesComponent} from "./view/admin/myModules/myModules.component";
-import {MyModuleListComponent} from "./view/admin/myModules/myModule-list/myModule-list.component";
-import {MyModuleEditComponent} from "./view/admin/myModules/myModule-edit/myModule-edit.component";
-import {MyModuleViewComponent} from "./view/admin/myModules/myModule-view/myModule-view.component";
-import {MyModuleCreateComponent} from "./view/admin/myModules/myModule-create/myModule-create.component";
-import { FiliereComponent } from './view/admin/filiere/filiere.component';
-import { FiliereListComponent } from './view/admin/filiere/filiere-list/filiere-list.component';
-import { FiliereCreateComponent } from './view/admin/filiere/filiere-create/filiere-create.component';
+import {MyModulesComponent} from "./view/espaces/espace-admin-note/myModules/myModules.component";
+import {MyModuleListComponent} from "./view/espaces/espace-admin-note/myModules/myModule-list/myModule-list.component";
+import {MyModuleEditComponent} from "./view/espaces/espace-admin-note/myModules/myModule-edit/myModule-edit.component";
+import {MyModuleViewComponent} from "./view/espaces/espace-admin-note/myModules/myModule-view/myModule-view.component";
+import {MyModuleCreateComponent} from "./view/espaces/espace-admin-note/myModules/myModule-create/myModule-create.component";
+import { FiliereComponent } from './view/espaces/espace-admin-note/filiere/filiere.component';
+import { FiliereListComponent } from './view/espaces/espace-admin-note/filiere/filiere-list/filiere-list.component';
+import { FiliereCreateComponent } from './view/espaces/espace-admin-note/filiere/filiere-create/filiere-create.component';
 import {ConfirmationService, MessageService} from "primeng/api";
-import { MyOptionComponent } from './view/admin/my-option/my-option.component';
-import { MyOptionListeComponent } from './view/admin/my-option/my-option-liste/my-option-liste.component';
-import { MyOptionCreateComponent } from './view/admin/my-option/my-option-create/my-option-create.component';
-import { NoteEtudiantModuleComponent } from './view/coodronnateurModule/note-etudiant-module/note-etudiant-module.component';
-import { NoteEtudiantModuleEditComponent } from './view/coodronnateurModule/note-etudiant-module/note-etudiant-module-edit/note-etudiant-module-edit.component';
-import { NoteEtudiantRatComponent } from './view/coodronnateurModule/note-etudiant-rat/note-etudiant-rat.component';
-import { NoteEtudiantRatEditComponent } from './view/coodronnateurModule/note-etudiant-rat/note-etudiant-rat-edit/note-etudiant-rat-edit.component';
-import { InscriptionNouveauEtudiantComponent } from './view/admin/inscription-nouveau-etudiant/inscription-nouveau-etudiant.component';
-import { InscriptionNouveauCreateComponent } from './view/admin/inscription-nouveau-etudiant/inscription-nouveau-create/inscription-nouveau-create.component';
-import { InscriptionAncienEtudiantComponent } from './view/admin/inscription-ancien-etudiant/inscription-ancien-etudiant.component';
-import { InscriptionNouveauEditComponent } from './view/admin/inscription-nouveau-etudiant/inscription-nouveau-edit/inscription-nouveau-edit.component';
-import { InscriptionAncienEditComponent } from './view/admin/inscription-ancien-etudiant/inscription-ancien-edit/inscription-ancien-edit.component';
-import { ModuleSemestreOptionComponent } from './view/admin/module-semestre-option/module-semestre-option.component';
-import { ModuleSemestreOptionCreateComponent } from './view/admin/module-semestre-option/module-semestre-option-create/module-semestre-option-create.component';
-import { ModuleSemestreOptionListComponent } from './view/admin/module-semestre-option/module-semestre-option-list/module-semestre-option-list.component';
-import {PonderationAffectComponent} from "./view/admin/ponderation/ponderation-affect/ponderation-affect.component";
-import {PonderationCreateComponent} from "./view/admin/ponderation/ponderation-create/ponderation-create.component";
+import { MyOptionComponent } from './view/espaces/espace-admin-note/my-option/my-option.component';
+import { MyOptionListeComponent } from './view/espaces/espace-admin-note/my-option/my-option-liste/my-option-liste.component';
+import { MyOptionCreateComponent } from './view/espaces/espace-admin-note/my-option/my-option-create/my-option-create.component';
+import { NoteEtudiantModuleComponent } from './view/espaces/espace-coordonnateur-module/coodronnateurModule/note-etudiant-module/note-etudiant-module.component';
+import { NoteEtudiantModuleEditComponent } from './view/espaces/espace-coordonnateur-module/coodronnateurModule/note-etudiant-module/note-etudiant-module-edit/note-etudiant-module-edit.component';
+import { NoteEtudiantRatComponent } from './view/espaces/espace-coordonnateur-module/coodronnateurModule/note-etudiant-rat/note-etudiant-rat.component';
+import { NoteEtudiantRatEditComponent } from './view/espaces/espace-coordonnateur-module/coodronnateurModule/note-etudiant-rat/note-etudiant-rat-edit/note-etudiant-rat-edit.component';
+import { InscriptionNouveauEtudiantComponent } from './view/espaces/espace-admin-note/inscription-nouveau-etudiant/inscription-nouveau-etudiant.component';
+import { InscriptionNouveauCreateComponent } from './view/espaces/espace-admin-note/inscription-nouveau-etudiant/inscription-nouveau-create/inscription-nouveau-create.component';
+import { InscriptionAncienEtudiantComponent } from './view/espaces/espace-admin-note/inscription-ancien-etudiant/inscription-ancien-etudiant.component';
+import { InscriptionNouveauEditComponent } from './view/espaces/espace-admin-note/inscription-nouveau-etudiant/inscription-nouveau-edit/inscription-nouveau-edit.component';
+import { InscriptionAncienEditComponent } from './view/espaces/espace-admin-note/inscription-ancien-etudiant/inscription-ancien-edit/inscription-ancien-edit.component';
+import { ModuleSemestreOptionComponent } from './view/espaces/espace-admin-note/module-semestre-option/module-semestre-option.component';
+import { ModuleSemestreOptionCreateComponent } from './view/espaces/espace-admin-note/module-semestre-option/module-semestre-option-create/module-semestre-option-create.component';
+import { ModuleSemestreOptionListComponent } from './view/espaces/espace-admin-note/module-semestre-option/module-semestre-option-list/module-semestre-option-list.component';
+import {PonderationAffectComponent} from "./view/espaces/espace-admin-note/ponderation/ponderation-affect/ponderation-affect.component";
+import {PonderationCreateComponent} from "./view/espaces/espace-admin-note/ponderation/ponderation-create/ponderation-create.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatIcon, MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
-import {NoteEtudiantSemestreComponent} from "./view/admin/note-etudiant-semestre/note-etudiant-semestre.component";
-import {NoteEtudiantSemestreModulesComponent} from "./view/admin/note-etudiant-semestre/note-etudiant-semestre-modules/note-etudiant-semestre-modules.component";
-import { EtudiantComponent } from './view/etudiant/etudiant.component';
-import { NoteSemestreOneComponent } from './view/etudiant/note-semestre-one/note-semestre-one.component';
-import { AbsenceEditComponent } from './view/professeur/absence-edit/absence-edit.component';
-import { ChoisirParamComponent } from './view/professeur/absence-edit/choisir-param/choisir-param.component';
-import { AbsenceEtudiantComponent } from './view/etudiant/absence-etudiant/absence-etudiant.component';
+import {NoteEtudiantSemestreComponent} from "./view/espaces/espace-admin-note/note-etudiant-semestre/note-etudiant-semestre.component";
+import {NoteEtudiantSemestreModulesComponent} from "./view/espaces/espace-admin-note/note-etudiant-semestre/note-etudiant-semestre-modules/note-etudiant-semestre-modules.component";
+import { EtudiantComponent } from './view/espaces/espace-etudiant/etudiant/etudiant.component';
+import { NoteSemestreOneComponent } from './view/espaces/espace-admin-note/releve-admin/note-semestre-one/note-semestre-one.component';
+import { AbsenceEditComponent } from './view/espaces/espace-professeur/absence-edit/absence-edit.component';
+import { ChoisirParamComponent } from './view/espaces/espace-professeur/absence-edit/choisir-param/choisir-param.component';
+import { AbsenceEtudiantComponent } from './view/espaces/espace-etudiant/etudiant/absence-etudiant/absence-etudiant.component';
 import {TestpdfComponent} from "./view/testpdf/testpdf.component";
 import { ImageUploadComponent } from './view/test/image-upload/image-upload.component';
-import {SeanceCreateComponent} from "./view/admin/seance/seance-create/seance-create.component";
-import {ConsultationAbsencesComponent} from "./view/admin/consultation-absences/consultation-absences.component";
-import {SeanceEditComponent} from "./view/admin/seance/seance-edit/seance-edit.component";
-import {SeanceListComponent} from "./view/admin/seance/seance-list/seance-list.component";
-import { JustificationComponent } from './view/admin/consultation-absences/justification/justification.component';
+import {SeanceCreateComponent} from "./view/espaces/espace-admin-note/seance/seance-create/seance-create.component";
+import {ConsultationAbsencesComponent} from "./view/espaces/espace-admin-absence/consultation-absences/consultation-absences.component";
+import {SeanceEditComponent} from "./view/espaces/espace-admin-note/seance/seance-edit/seance-edit.component";
+import {SeanceListComponent} from "./view/espaces/espace-admin-note/seance/seance-list/seance-list.component";
+import { JustificationComponent } from './view/espaces/espace-admin-absence/consultation-absences/justification/justification.component';
 import { LoginComponent } from './view/login/login.component';
 import {AccueilComponent} from "./view/accueil/accueil.component";
 import { EspacesComponent } from './view/espaces/espaces.component';
-import { EspaceEtudiantComponent } from './view/espace-etudiant/espace-etudiant.component';
-
+import { EspaceEtudiantComponent } from './view/espaces/espace-etudiant/espace-etudiant.component';
+import { DetailNoteComponent } from './view/espaces/espace-admin-absence/detail-note/detail-note.component';
+import { ErreurNoteComponent } from './view/espaces/espace-etudiant/etudiant/erreur-note/erreur-note.component';
+import { EspaceProfesseurComponent } from './view/espaces/espace-professeur/espace-professeur.component';
+import { EspaceAdminNoteComponent } from './view/espaces/espace-admin-note/espace-admin-note.component';
+import { EspaceAdminAbsenceComponent } from './view/espaces/espace-admin-absence/espace-admin-absence.component';
+import { EspaceCoordonnateurModuleComponent } from './view/espaces/espace-coordonnateur-module/espace-coordonnateur-module.component';
+import { ReleveEtudiantComponent } from './view/espaces/espace-etudiant/releve-etudiant/releve-etudiant.component';
+import { ReleveComponent } from './view/espaces/espace-etudiant/releve-etudiant/releve/releve.component';
+import { ReleveAdminComponent } from './view/espaces/espace-admin-note/releve-admin/releve-admin.component';
+import { ModuleOrAffectationComponent } from './view/espaces/espace-admin-note/module-or-affectation/module-or-affectation.component';
+import { ChoixCoordonnateurComponent } from './view/espaces/espace-coordonnateur-module/choix-coordonnateur/choix-coordonnateur.component';
+import { EtudiantExcluComponent } from './view/espaces/espace-admin-absence/etudiant-exclu/etudiant-exclu.component';
+import { ListeAbsenceComponent } from './view/liste-absence/liste-absence.component';
+import {PonderationComponent} from "./view/espaces/espace-admin-note/ponderation/ponderation.component";
+import {SeanceComponent} from "./view/espaces/espace-admin-note/seance/seance.component";
 
 
 @NgModule({
@@ -313,7 +327,24 @@ import { EspaceEtudiantComponent } from './view/espace-etudiant/espace-etudiant.
         LoginComponent,
         AccueilComponent,
         EspacesComponent,
-        EspaceEtudiantComponent
+        EspaceEtudiantComponent,
+        DetailNoteComponent,
+        ErreurNoteComponent,
+        EspaceProfesseurComponent,
+        EspaceAdminNoteComponent,
+        EspaceAdminAbsenceComponent,
+        EspaceCoordonnateurModuleComponent,
+        ReleveEtudiantComponent,
+        ReleveComponent,
+        ReleveAdminComponent,
+        ModuleOrAffectationComponent,
+        ChoixCoordonnateurComponent,
+        EtudiantExcluComponent,
+        ListeAbsenceComponent,
+        PonderationComponent,
+        SeanceComponent,
+
+
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

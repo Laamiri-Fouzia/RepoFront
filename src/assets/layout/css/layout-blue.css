@@ -1578,7 +1578,6 @@ a {
   min-height: 100vh;
 }
 .layout-wrapper .layout-main .layout-content {
-  padding: 16px;
   flex: 1 1 0;
 }
 
@@ -2384,7 +2383,7 @@ a {
 }
 .layout-dashboard .team ul img {
   width: 36px;
-  height: 36x;
+  height: 36px;
   vertical-align: middle;
   display: inline-block;
 }

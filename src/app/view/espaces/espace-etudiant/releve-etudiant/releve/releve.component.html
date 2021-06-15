@@ -1,0 +1,44 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="coco">
+            <div><img src="../../../assets/OurImages/logoIspits.png" width="150px" height="90px"></div>
+            <tr>
+                <td class="border border-light">Nom et Prénom  :</td>
+                <th class="border border-light"><span class="espace">____</span>{{notesEtudiantModules[0].etudiant.nom+'  '+notesEtudiantModules[0].etudiant.prenom}}</th>
+                <td class="border border-light"><span class="espace">____</span>Option    : </td>
+                <th class="border border-light"><span class="espace">____</span>{{notesEtudiantModules[0].moduleSemestreOption.myOption.libelle}}</th>
+                <td class="border border-light"><span class="espace">____</span>Semestre {{semestreSelct}}</td>
+
+
+            </tr>
+            <table class="table table-bordered border-dark">
+                <thead>
+                <tr>
+                    <th>Module</th>
+                    <th >Moyenne du module</th>
+                    <th>Validation</th>
+                    <th>Année Universitaire</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let n of notesEtudiantModules">
+                    <th>{{n.moduleSemestreOption.myModule.libelle}}</th>
+                    <td>{{n.noteGlobale}}</td>
+                    <td>{{n.etatValidation.libelle}}</td>
+                    <td>{{n.moduleSemestreOption.anneeUniversitaire.libelle}}</td>
+                </tr>
+                <tr class="result">
+                    <td class="border border-success">Moyenne de semestrielle</td>
+                    <td class="border border-success">{{notesEtudiantModules[0].noteEtudiantSemestre.noteSemestre}}</td>
+                    <td class="border border-success">Décision</td>
+                    <td class="border border-success">{{notesEtudiantModules[0].noteEtudiantSemestre.etatValidation.libelle}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="ssm">Acune duplicate de ce relevé ne sera délivré.L'étudiant peut en faire des copies conformes à l'original en cas de besoin.</p>
+        </div>
+
+    </div>
+
+</div>

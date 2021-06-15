@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="vovo">
+            <h4 class="t">Liste des etudiant qui n'ont pas le droit de passer l'examen normal du Module </h4>
+            <h4 style="margin-left: 80px;color: brown">{{etudiantAbsente[0].moduleSemestreOption.myModule.libelle}} </h4>
+            <table class="table table-bordered border-dark">
+                <thead>
+                <tr>
+                    <th>Cne</th>
+                    <th >Nom</th>
+                    <th>Prénom</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let n of etudiantAbsente">
+                    <th>{{n.etudiant.cne}}</th>
+                    <td>{{n.etudiant.nom}}</td>
+                    <td>{{n.etudiant.prenom}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4 text-right">
+            <!--<button class="btn btn-success btn-block" (click)="gneratePDF()">Download PDF</button>-->
+            <button class="btn" (click)="gneratePDF()"><i class="fa fa-download"></i> télécharger pdf</button>
+        </div>
+    </div>
+
+</div>

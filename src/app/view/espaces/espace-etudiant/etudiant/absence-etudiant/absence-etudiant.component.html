@@ -1,0 +1,98 @@
+<button (click)="gotEspaceEtudiant('espaces/etudiant')" class="p-button-rounded p-button-secondary"
+        icon="pi pi-arrow-left" pButton pRipple
+        type="button"></button>
+<div class="p-grid">
+    <div class="p-col-12">
+
+        <p-toast></p-toast>
+
+        <div class="card p-grid">
+            <h2 class="p-col-12 p-text-center bold">Consultez votre Liste d'Absences</h2>
+            <div class="remarque">
+                <h3 style="color: red;margin-left: 30px">Remarques Importantes !!</h3>
+                <h4 style=";margin-left: 50px">1-vous devez importer votre justification avant 48h</h4>
+                <h4 style=";margin-left: 50px">2-Trois absences non justifié/justification refusé par l'administrateur
+                    dans un module,
+                    vous redirigez directement vers le rattrapage </h4>
+            </div>
+            <p-toolbar class="p-col-12" styleClass="p-mb-4 ">
+                <div class="p-field">
+                    <label for="cne">CNE</label>
+                    <input [(ngModel)]="cne" autofocus id="cne" pInputText required type="text"/>
+                </div>
+                <div class="p-col-2">
+                    <p-dropdown [(ngModel)]="annee" [options]="years" [style]="{'width':'180px'}" optionLabel="libelle"
+                                optionValue="libelle" placeholder="Année universitaire"
+                                styleClass="customClass"></p-dropdown>
+                </div>
+
+
+                <div class="p-col-2">
+                    <p-dropdown [(ngModel)]="semstre" [options]="semestres" [style]="{'width':'180px'}"
+                                optionLabel="label" optionValue="value"></p-dropdown>
+                </div>
+
+                <p-button (click)="searchAbsence(annee,semstre,cne)" class="p-col-2">Valider</p-button>
+            </p-toolbar>
+
+            <p-table #dt [globalFilterFields]="['Etudiant','Note module session normale','Resultat']" [paginator]="true"
+                     [rowHover]="true"
+                     [rows]="4"
+                     [showCurrentPageReport]="true" [value]="absences"
+                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                     dataKey="id"
+                     styleClass="p-datatable-customers">
+
+                <ng-template pTemplate="header">
+                    <tr>
+
+                        <th pSortableColumn="note continue ">Module
+                            <p-sortIcon field="note continue "></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="Note module session normale">libelle seance
+                            <p-sortIcon field="Note module session normale"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="note Finale avant Rat">Date d'absence
+                            <p-sortIcon field="note Finale avant Rat"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="Resultat">Heure de seance
+                            <p-sortIcon field="Resultat"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="Resultat">Justification
+                            <p-sortIcon field="Resultat"></p-sortIcon>
+                        </th>
+                        <th></th>
+
+                        <th pSortableColumn="Action">Etat Absence
+                            <p-sortIcon field="Action"></p-sortIcon>
+                        </th>
+                        <!--<th pSortableColumn="totalPaye">Total Paye <p-sortIcon field="totalPaye"></p-sortIcon></th>-->
+                        <th></th>
+
+                    </tr>
+                </ng-template>
+                <ng-template let-absence pTemplate="body">
+                    <tr>
+                        <td>{{absence.seance.moduleSemestreOption.myModule.libelle}}</td>
+                        <td>{{absence.seance.libelle}}</td>
+                        <td>{{absence.seance.dateSeance}}</td>
+                        <td>{{absence.seance.heureDebut}}-{{absence.seance.heureFin}}</td>
+                        <td>
+                            <!-- <div class="file-input">
+                                 <input type="file" id="file" class="file">
+                                 <label for="file">Select file</label>
+                             </div>-->
+                            <input (change)="onFileChanged($event)" class="upload-box" type="file">
+                            <input (click)="onUpload(absence)" class="envoye" type="button" value="envoyer">
+                        </td>
+
+                        <td></td>
+                        <td>{{absence.etatJustification}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+        </div>
+        <app-note-etudiant-module-edit></app-note-etudiant-module-edit>
+    </div>
+</div>

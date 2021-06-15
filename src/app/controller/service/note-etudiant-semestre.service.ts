@@ -265,10 +265,43 @@ export class NoteEtudiantSemestreService {
             }
         );
     }
+
     gotToPage(viewNoteSemestreOne: string) {
         this.router.navigate([`${viewNoteSemestreOne}`]);
     }
-    afficherPV(input1: string, input2: number) {
+
+    afficherPVPouE(input1: string, input2: number) {
+        this.http.get<Array<NoteEtudiantModule>>(this._urlBase+this._urlNoteEtudModule+'/Etudiant/cne/'+input1+'/moduleSemestreOption/semestre/code/'+input2).subscribe(
+            data=>{
+                this.notesEtudiantModules=data;
+                console.log(data);
+                if(this.notesEtudiantModules[0].noteEtudiantSemestre.noteSemestre===0){
+                    this.gotToPage('view/erreurNote');
+                }else{
+                    this.gotToPage('view/releve');
+                }
+                /*for(let i=0 ; i<this.notesEtudiantModules.length ; i++){
+                    for(let j=0 ; j<this.notesEtudiantModules.length ; j++){
+                        if(this.notesEtudiantModules[j].moduleSemestreOption.myModule.code==this.notesEtudiantModules[i].moduleSemestreOption.myModule.code && this.notesEtudiantModules[j].moduleSemestreOption.anneeUniversitaire.anneeOne<this.notesEtudiantModules[i].moduleSemestreOption.anneeUniversitaire.anneeOne){
+                            this.notesEtudiantModules1.push(this.notesEtudiantModules[j]);
+                        }
+                    }
+
+
+                }
+                for(let i=0 ; i<this.notesEtudiantModules1.length ; i++){
+            this.notesEtudiantModules.splice(1,i);
+                }
+
+                console.log(this.notesEtudiantModules1);
+                console.log(this.notesEtudiantModules2);
+                console.log(data);*/
+            },error => {
+            }
+        );
+
+    }
+    afficherPVPourA(input1: string, input2: number) {
         this.http.get<Array<NoteEtudiantModule>>(this._urlBase+this._urlNoteEtudModule+'/Etudiant/cne/'+input1+'/moduleSemestreOption/semestre/code/'+input2).subscribe(
             data=>{
                 this.notesEtudiantModules=data;
